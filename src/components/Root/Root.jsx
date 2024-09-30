@@ -6,9 +6,11 @@ import Header from "../../shared/Header/Header";
 const Root = () => {
   return (
     <div className="flex flex-col h-screen">
-      <Header />
-      <div className=" grow">
-        <Outlet />
+      <div className="max-w-6xl mx-auto">
+        <Header />
+        <div className=" grow">
+          <Outlet />
+        </div>
       </div>
       <Footer />
     </div>
