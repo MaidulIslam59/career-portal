@@ -3,7 +3,7 @@ import React from "react";
 const Footer = () => {
   return (
     <div className="bg-[#1A1919] text-white">
-      <footer className="footer  bg-[#1A1919] text-white px-72 pt-32 ">
+      <footer className="footer  bg-[#1A1919] text-white px-72 pt-32 flex justify-between">
         <aside>
           <h1 className="text-3xl font-semibold">CareerHub</h1>
           <p>
