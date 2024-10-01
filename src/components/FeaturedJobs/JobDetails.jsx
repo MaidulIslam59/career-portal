@@ -11,6 +11,15 @@ const JobDetails = () => {
   const intId = parseInt(id);
   const job = jobs.find((job) => job.id === intId);
   console.log(job);
+  const {
+    job_description,
+    job_responsibility,
+    educational_requirements,
+    experiences,
+    salary,
+    job_title,
+    contact_information,
+  } = job;
 
   return (
     //   className="w-full mx-0"
@@ -44,35 +53,26 @@ const JobDetails = () => {
         <div className=" md:grid col-span-3 ">
           <section className="mb-6">
             <p>
-              <strong>Job Description: </strong> A UI/UX (User Interface/User
-              Experience) designer is responsible for designing and creating
-              engaging and effective interfaces for software and web
-              applications. This includes designing the layout, visual design,
-              and interactivity of the user interface.
+              <strong>Job Description: </strong>
+              {job_description}
             </p>
           </section>
           <section className="mb-6">
             <p>
-              <strong>Job Responsibility: </strong> Collaborating with
-              cross-functional teams: UI/UX designers often work closely with
-              other teams, including product management, engineering, and
-              marketing, to ensure that the user interface is aligned with
-              business and technical requirements. You will need to be able to
-              effectively communicate your design ideas and gather feedback from
-              other team members.
+              <strong>Job Responsibility: </strong> {job_responsibility}
             </p>
           </section>
           <section className="mb-6">
             <h2>
               <strong>Educationar Requirements :</strong>
             </h2>
-            <p>Bachelor degree to complete any reputational university.</p>
+            <p>{educational_requirements}</p>
           </section>
           <section className="mb-6">
             <h2>
               <strong>Experiences :</strong>
             </h2>
-            <p>2-3 Years in this field.</p>
+            <p>{experiences}</p>
           </section>
         </div>
         <div className="">
@@ -80,26 +80,29 @@ const JobDetails = () => {
           <hr />
           <p className="flex mt-5">
             <AiOutlineDollarCircle className="text-2xl mr-2" />
-            <strong className="mr-2">Salary : </strong> 100K - 150K (Per Month)
+            <strong className="mr-2 text-nowrap">Salary : </strong> {salary}
           </p>
           <p className="flex mt-4">
             <ImBriefcase className="text-2xl mr-2" />
-            <strong className="mr-2">Job Title : </strong> Product Designer
+            <strong className="mr-2 text-nowrap">Job Title : </strong>{" "}
+            {job_title}
           </p>
           <h2 className="text-xl font-bold mt-8 mb-6">Contact Information</h2>
           <hr />
           <p className="flex mt-5">
             <FaPhoneAlt className="text-2xl mr-2" />
-            <strong className="mr-2">Phone : </strong> 01750-00 00 00
+            <strong className="mr-2 text-nowrap">Phone: </strong>{" "}
+            {contact_information.phone}
           </p>
           <p className="flex mt-5">
             <MdOutlineEmail className="text-2xl mr-2" />
-            <strong className="mr-2">Email : </strong> info@gmail.com
+            <strong className="mr-2 text-nowrap">Email: </strong>{" "}
+            {contact_information.email}
           </p>
           <p className="flex mt-5">
             <HiLocationMarker className="text-2xl mr-2" />
-            <strong className="mr-2">Address: </strong> Dhanmondi 32, Sukrabad
-            Dhaka, Bangladesh
+            <strong className="mr-2 text-nowrap">Address: </strong>{" "}
+            {contact_information.address}
           </p>
 
           <button className="btn text-white bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 w-full my-7">
