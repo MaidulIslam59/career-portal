@@ -11,7 +11,7 @@ const FeaturedJobs = () => {
       .then((data) => setJobs(data));
   }, []);
   return (
-    <div>
+    <div className="container mx-auto">
       <div className="text-center">
         <h2 className="text-5xl">Featured Jobs : {jobs.length}</h2>
         <p>

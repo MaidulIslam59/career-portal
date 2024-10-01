@@ -9,11 +9,21 @@ const JobDetails = () => {
   console.log(job);
 
   return (
-    <div>
-      <h2>JobDetails of : {id}</h2>
-      <div className="grid gap-4 md:grid-cols-4">
-        <div className="border md:grid col-span-3">
-          <section>
+    <div className="w-full mx-0">
+      <div>
+        {/* <div
+          className="bg-no-repeat bg-left"
+          style="background-image: url();"
+        ></div> */}
+        <img className="m-0 p-0 " src="/src/assets/images/bg1.png" alt="" />
+      </div>
+      <h2 className="text-2xl font-bold text-center -translate-y-32 ">
+        Job Details
+      </h2>
+
+      <div className="container mx-auto grid gap-4 md:grid-cols-4 mt-32">
+        <div className="border md:grid col-span-3 ">
+          <section className="mb-6">
             <p>
               <strong>Job Description: </strong> A UI/UX (User Interface/User
               Experience) designer is responsible for designing and creating
@@ -22,7 +32,7 @@ const JobDetails = () => {
               and interactivity of the user interface.
             </p>
           </section>
-          <section>
+          <section className="mb-6">
             <p>
               <strong>Job Responsibility: </strong> Collaborating with
               cross-functional teams: UI/UX designers often work closely with
@@ -33,13 +43,13 @@ const JobDetails = () => {
               other team members.
             </p>
           </section>
-          <section>
+          <section className="mb-6">
             <h2>
               <strong>Educationar Requirements :</strong>
             </h2>
             <p>Bachelor degree to complete any reputational university.</p>
           </section>
-          <section>
+          <section className="mb-6">
             <h2>
               <strong>Experiences :</strong>
             </h2>
