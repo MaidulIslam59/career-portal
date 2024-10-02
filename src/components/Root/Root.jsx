@@ -7,12 +7,12 @@ const Root = () => {
   return (
     // classname="flex flex-col h-screen"
     <div className="">
-      <div className="max-w-6xl mx-auto">
-        <Header />
-        <div className="grow">
-          <Outlet />
-        </div>
+      {/* <div className="max-w-6xl mx-auto"> */}
+      <Header />
+      <div className="grow">
+        <Outlet />
       </div>
+      {/* </div> */}
       <Footer />
     </div>
   );

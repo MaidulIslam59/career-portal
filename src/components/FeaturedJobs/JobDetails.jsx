@@ -4,6 +4,8 @@ import { ImBriefcase } from "react-icons/im";
 import { FaPhoneAlt } from "react-icons/fa";
 import { MdOutlineEmail } from "react-icons/md";
 import { HiLocationMarker } from "react-icons/hi";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const JobDetails = () => {
   const jobs = useLoaderData();
@@ -20,6 +22,10 @@ const JobDetails = () => {
     job_title,
     contact_information,
   } = job;
+
+  const handleAppliedJobs = () => {
+    toast("You have applied successfully");
+  };
 
   return (
     //   className="w-full mx-0"
@@ -105,9 +111,13 @@ const JobDetails = () => {
             {contact_information.address}
           </p>
 
-          <button className="btn text-white bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 w-full my-7">
+          <button
+            onClick={handleAppliedJobs}
+            className="btn text-white bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 w-full my-7"
+          >
             Apply Now
           </button>
+          <ToastContainer />
         </div>
       </div>
     </div>
