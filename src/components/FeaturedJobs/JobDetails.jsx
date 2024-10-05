@@ -6,13 +6,14 @@ import { MdOutlineEmail } from "react-icons/md";
 import { HiLocationMarker } from "react-icons/hi";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { saveJobApplication } from "../utility/LocalStorage";
 
 const JobDetails = () => {
   const jobs = useLoaderData();
   const { id } = useParams();
   const intId = parseInt(id);
   const job = jobs.find((job) => job.id === intId);
-  console.log(job);
+  // console.log(job);
   const {
     job_description,
     job_responsibility,
@@ -24,6 +25,7 @@ const JobDetails = () => {
   } = job;
 
   const handleAppliedJobs = () => {
+    saveJobApplication(id);
     toast("You have applied successfully");
   };
 
