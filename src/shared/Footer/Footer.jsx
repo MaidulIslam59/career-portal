@@ -5,7 +5,7 @@ const Footer = () => {
     <footer className="bg-[#1A1919] text-white p-10 mt-6">
       <div className="footer  max-w-6xl mx-auto flex justify-between">
         <aside>
-          <h2 className="text-3xl font-bold">CareerHub</h2>
+          <h2 className="text-3xl font-bold">CareerPortal</h2>
           <p>
             There are many variations of passages
             <br />

@@ -46,7 +46,7 @@ const Header = () => {
           </ul>
         </div>
         <NavLink to="/" className="btn btn-ghost text-xl font-bold">
-          CareerHub
+          CareerPortal
         </NavLink>
       </div>
       <div className="navbar-center hidden lg:flex">
