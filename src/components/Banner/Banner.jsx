@@ -22,7 +22,7 @@ const Banner = () => {
             </div>
           </div>
           <div className="max-w-3xl ">
-            <img className="" src="/src/assets/images/user.png" alt="" />
+            <img className="" src="/assets/images/user.png" alt="" />
           </div>
         </div>
       </div>

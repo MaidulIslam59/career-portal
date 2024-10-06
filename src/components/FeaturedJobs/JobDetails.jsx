@@ -40,7 +40,7 @@ const JobDetails = () => {
         ></div> */}
           <img
             className="m-0 p-0 w-80 h-52 "
-            src="/src/assets/images/bg1.png"
+            src="/assets/images/bg1.png"
             alt=""
           />
         </div>
@@ -51,7 +51,7 @@ const JobDetails = () => {
         <div>
           <img
             className="m-0 p-0 w-80 h-52 "
-            src="/src/assets/images/bg2.png"
+            src="/assets/images/bg2.png"
             alt=""
           />
         </div>
