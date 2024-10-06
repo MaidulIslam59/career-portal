@@ -30,7 +30,7 @@ const router = createBrowserRouter([
       {
         path: "/applied-jobs",
         element: <AppliedJobs />,
-        loader: () => "/jobs.json",
+        loader: () => fetch("/jobs.json"),
       },
       {
         path: "/blog",
