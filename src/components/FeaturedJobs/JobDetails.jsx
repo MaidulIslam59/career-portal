@@ -15,6 +15,7 @@ const JobDetails = () => {
   const job = jobs.find((job) => job.id === intId);
   // console.log(job);
   const {
+    logo,
     job_description,
     job_responsibility,
     educational_requirements,
@@ -60,6 +61,7 @@ const JobDetails = () => {
       <div className="container mx-auto grid gap-4 md:grid-cols-4 mt-32">
         <div className=" md:grid col-span-3 ">
           <section className="mb-6">
+            <img className="mb-4" src={logo} alt="logo" />
             <p>
               <strong>Job Description: </strong>
               {job_description}

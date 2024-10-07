@@ -7,7 +7,7 @@ const Home = () => {
   return (
     <div>
       <Banner />
-      <JobCategory />
+      {/* <JobCategory /> */}
       <FeaturedJobs />
     </div>
   );
