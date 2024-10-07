@@ -47,22 +47,6 @@ const Jobs = ({ job }) => {
           </div>
         </div>
       </div>
-      {/* <div>
-        <img className="w-28 h-10" src={logo} alt="" />
-        <p>{job_title}</p>
-        <p>{company_name}</p>
-        <div>
-          <div className="flex">
-            <p>{remote_or_onsite}</p>
-            <p>{job_type}</p>
-          </div>
-          <div className="flex">
-            <p>{location}</p>
-            <p>{salary}</p>
-          </div>
-        </div>
-        <button>View Details</button>
-      </div> */}
     </div>
   );
 };

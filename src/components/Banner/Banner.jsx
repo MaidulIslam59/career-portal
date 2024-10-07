@@ -6,7 +6,7 @@ const Banner = () => {
       <div className="max-w-6xl mx-auto text-center">
         <div className="grid grid-cols-2 ">
           <div>
-            <div className="max-w-xl h-72 mt-24">
+            <div className="max-w-xl h-72 mt-24 ">
               <h1 className="text-7xl font-bold text-start">
                 One Step <br /> Closer To Your <br />
                 <strong className="text-[#7E90FE] 0%">Dream Job</strong>
@@ -16,7 +16,7 @@ const Banner = () => {
                 you need. Its your future. Come find it. Manage all your job
                 application from start to finish.
               </p>
-              <button className="btn text-white bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500  my-7 ">
+              <button className="btn mr-auto  block  text-white bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500  my-7 ">
                 Get Started
               </button>
             </div>
