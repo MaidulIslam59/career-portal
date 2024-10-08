@@ -2,7 +2,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="bg-[#1A1919] text-white p-10 mt-6">
+    <footer className="bg-[#1A1919] text-white p-10">
       <div className="container mx-auto">
         <div className="footer grid col-span-2 justify-around pb-10">
           <aside className="">
@@ -43,7 +43,7 @@ const Footer = () => {
         </div>
         {/* last footer---- */}
         <div className="divider divider-neutral"></div>
-        <div className="flex footer  justify-between">
+        <div className="flex footer justify-between">
           <p>@2023 CareerHub. All Rights Reserved</p>
           <p>Powered by CareerHub</p>
         </div>
