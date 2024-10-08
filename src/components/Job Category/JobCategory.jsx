@@ -15,7 +15,7 @@ const JobCategory = () => {
   }, []);
 
   return (
-    <div className="max-w-6xl mx-auto block my-2">
+    <div className="container mx-auto block my-2">
       <div className="text-center">
         <h2 className="text-5xl font-bold p-4">Job Category List</h2>
         <p>
@@ -37,9 +37,12 @@ const JobCategory = () => {
                   ][index]
                 }
 
-                <p className="text-xl font-semibold">
-                  {category?.category_name}
-                </p>
+                <div className="">
+                  <p className="text-xl font-semibold">
+                    {category?.category_name}
+                  </p>
+                  <p>{category?.availability}</p>
+                </div>
               </div>
             </Link>
           );

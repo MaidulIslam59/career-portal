@@ -3,7 +3,7 @@ import React from "react";
 const Banner = () => {
   return (
     <div className="bg-[#7E90FE0D]">
-      <div className="max-w-6xl mx-auto text-center">
+      <div className="container mx-auto text-center">
         <div className="grid md:grid-cols-2">
           <div className="flex flex-col items-start justify-center order-2 md:order-1">
             <h1 className="text-7xl font-bold text-start">

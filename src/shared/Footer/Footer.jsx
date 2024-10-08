@@ -3,9 +3,9 @@ import React from "react";
 const Footer = () => {
   return (
     <footer className="bg-[#1A1919] text-white p-10 mt-6">
-      <div className="max-w-6xl mx-auto">
-        <div className="footer flex justify-between pb-10">
-          <aside>
+      <div className="container mx-auto">
+        <div className="footer grid col-span-2 justify-around pb-10">
+          <aside className="">
             <h2 className="text-3xl font-bold">CareerPortal</h2>
             <p>
               There are many variations of passages

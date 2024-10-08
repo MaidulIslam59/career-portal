@@ -19,7 +19,7 @@ const Header = () => {
     </>
   );
   return (
-    <div className=" container max-w-6xl mx-auto navbar bg-base-100">
+    <div className=" container  mx-auto navbar bg-base-100">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -50,7 +50,7 @@ const Header = () => {
         </NavLink>
       </div>
       <div className="navbar-center hidden lg:flex ">
-        <ul className="menu menu-horizontal px-1 ">{links}</ul>
+        <ul className="menu menu-horizontal px-1">{links}</ul>
       </div>
       <div className="navbar-end">
         <a className="btn text-white bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">

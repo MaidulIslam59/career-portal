@@ -41,7 +41,7 @@ const AppliedJobs = () => {
     }
   }, []);
   return (
-    <div className="max-w-6xl mx-auto">
+    <div className="container mx-auto">
       <div className=" flex justify-between">
         <div>
           {/* <div
@@ -85,38 +85,40 @@ const AppliedJobs = () => {
             {/* card card-compact */}
             <div className=" shadow-xl m-6 ">
               <div className="flex justify-between p-6 gap-7 border rounded-md">
-                <div className=" bg-neutral-100 p-4 border rounded-md">
-                  <img className="w-28 h-10 mt-10" src={job.logo} alt="" />
-                </div>
-                {/* <figure>
+                <div className="flex gap-12">
+                  <div className=" bg-neutral-100 p-4 border rounded-md">
+                    <img className="w-28 h-10 mt-10" src={job.logo} alt="" />
+                  </div>
+                  {/* <figure>
                   <img src={job.logo} alt="logo" />
                 </figure> */}
 
-                <div className="">
-                  <h2 className="text-xl font-semibold pb-1">
-                    {job.job_title}
-                  </h2>
-                  <p className="pb-1">{job.company_name}</p>
-                  <div>
-                    <button className="px-5 py-2 font-extrabold border rounded border-[#7E90FE] mr-4 text-[#9873FF]">
-                      {job.remote_or_onsite}
-                    </button>
-                    <button className="px-5 py-2 font-extrabold border rounded border-[#7E90FE] mr-4 text-[#9873FF]">
-                      {job.job_type}
-                    </button>
-                  </div>
-                  <div className="flex mt-4 ">
-                    <h2 className="flex mr-6">
-                      <HiLocationMarker className="text-2xl mr-2" />{" "}
-                      {job.location}
+                  <div className="">
+                    <h2 className="text-xl font-semibold pb-1">
+                      {job.job_title}
                     </h2>
-                    <h2 className="flex ">
-                      <AiOutlineDollarCircle className="text-2xl mr-2" />{" "}
-                      {job.salary}
-                    </h2>
+                    <p className="pb-1">{job.company_name}</p>
+                    <div>
+                      <button className="px-5 py-2 font-extrabold border rounded border-[#7E90FE] mr-4 text-[#9873FF]">
+                        {job.remote_or_onsite}
+                      </button>
+                      <button className="px-5 py-2 font-extrabold border rounded border-[#7E90FE] mr-4 text-[#9873FF]">
+                        {job.job_type}
+                      </button>
+                    </div>
+                    <div className="flex mt-4 ">
+                      <h2 className="flex mr-6">
+                        <HiLocationMarker className="text-2xl mr-2" />{" "}
+                        {job.location}
+                      </h2>
+                      <h2 className="flex ">
+                        <AiOutlineDollarCircle className="text-2xl mr-2" />{" "}
+                        {job.salary}
+                      </h2>
+                    </div>
                   </div>
                 </div>
-                <div className="flex justify-end mt-10">
+                <div className="flex justify-end mt-10 mr-10">
                   <Link to={`/job/${job.id}`}>
                     <button className="btn text-white bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
                       View Details
