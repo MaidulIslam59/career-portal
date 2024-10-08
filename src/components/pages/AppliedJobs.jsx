@@ -41,8 +41,8 @@ const AppliedJobs = () => {
     }
   }, []);
   return (
-    <div>
-      <div className="flex justify-between">
+    <div className="max-w-6xl mx-auto">
+      <div className=" flex justify-between">
         <div>
           {/* <div
           className="bg-no-repeat bg-left"
@@ -67,27 +67,24 @@ const AppliedJobs = () => {
         </div>
       </div>
 
-      <details className="dropdown w-56 ml-auto mr-20 block mt-7 ">
-        <summary className="btn m-1">Sort By</summary>
-        <ul className="menu dropdown-content bg-base-100 rounded-box z-[1] w-52 p-2 shadow ">
-          <li onClick={() => handleJobsFilter("all")}>
-            <a>All</a>
-          </li>
-          <li onClick={() => handleJobsFilter("remote")}>
-            <a>Remote</a>
-          </li>
-          <li onClick={() => handleJobsFilter("onsite")}>
-            <a>onsite</a>
-          </li>
-        </ul>
-      </details>
+      <select
+        onChange={(e) => handleJobsFilter(e.target.value)}
+        className="select select-bordered w-full max-w-xs ml-auto mr-8 block mt-7"
+      >
+        <option disabled selected>
+          Sort By
+        </option>
+        <option value={"all"}>All</option>
+        <option value={"remote"}>Remote</option>
+        <option value={"onsite"}>Onsite</option>
+      </select>
 
       <ul>
         {displayJobs.map((job) => (
-          <div key={job.id}>
+          <div key={job.id} className="">
             {/* card card-compact */}
-            <div className="mx-72  shadow-xl m-6 ">
-              <div className="flex justify-start p-4 gap-7 border rounded-md">
+            <div className=" shadow-xl m-6 ">
+              <div className="flex justify-between p-6 gap-7 border rounded-md">
                 <div className=" bg-neutral-100 p-4 border rounded-md">
                   <img className="w-28 h-10 mt-10" src={job.logo} alt="" />
                 </div>
@@ -119,7 +116,7 @@ const AppliedJobs = () => {
                     </h2>
                   </div>
                 </div>
-                <div className="ml-20 mt-10">
+                <div className="flex justify-end mt-10">
                   <Link to={`/job/${job.id}`}>
                     <button className="btn text-white bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
                       View Details

@@ -12,8 +12,8 @@ const CategoriesJob = () => {
   );
 
   return (
-    <div>
-      <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-7 pt-5">
+    <div className="max-w-6xl mx-auto">
+      <div className="grid sm:grid-cols-1 md:grid-cols-2 justify-center gap-7 pt-5">
         {filteredJobs?.map((job) => (
           <Jobs key={job.id} job={job} />
         ))}

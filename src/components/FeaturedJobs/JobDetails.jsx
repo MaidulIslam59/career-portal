@@ -62,6 +62,7 @@ const JobDetails = () => {
         <div className=" md:grid col-span-3 ">
           <section className="mb-6">
             <img className="mb-4" src={logo} alt="logo" />
+            <h2 className="font-bold text-2xl py-2">Job Title : {job_title}</h2>
             <p>
               <strong>Job Description: </strong>
               {job_description}
