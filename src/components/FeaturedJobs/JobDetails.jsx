@@ -32,7 +32,7 @@ const JobDetails = () => {
 
   return (
     //   className="w-full mx-0"
-    <div className="max-w-6xl mx-auto">
+    <div className="container mx-auto">
       <div className="flex justify-between">
         <div>
           {/* <div
