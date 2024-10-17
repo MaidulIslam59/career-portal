@@ -23,7 +23,7 @@ const Banner = () => {
             <div>
               <img
                 className="w-full h-full object-cover"
-                src="/assets/images/user.png"
+                src="/assets/images/cover.png"
                 alt=""
               />
             </div>
