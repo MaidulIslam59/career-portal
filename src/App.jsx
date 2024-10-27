@@ -7,6 +7,7 @@ import AppliedJobs from "./components/pages/AppliedJobs.jsx";
 import Blog from "./components/pages/Blog.jsx";
 import JobDetails from "./components/FeaturedJobs/JobDetails.jsx";
 import CategoriesJob from "./components/Job Category/CategoriesJob.jsx";
+import ScrollToTop from "./components/ScrollToTop.jsx";
 
 function App() {
   const router = createBrowserRouter([
@@ -52,7 +53,9 @@ function App() {
 
   return (
     <div>
-      <RouterProvider router={router} />
+      <RouterProvider router={router}>
+        <ScrollToTop />
+      </RouterProvider>
     </div>
   );
 }
