@@ -38,11 +38,6 @@ function App() {
           loader: () => fetch("/jobs.json"),
         },
         {
-          path: "/job/:id",
-          element: <JobDetails />,
-          loader: () => fetch("/jobs.json"),
-        },
-        {
           path: "/category/:id",
           element: <CategoriesJob />,
           loader: () => fetch("/jobs.json"),
