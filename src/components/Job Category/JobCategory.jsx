@@ -19,13 +19,12 @@ const JobCategory = () => {
     hidden: { opacity: 0, y: 50 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
   };
-
   return (
     <div className="container mx-auto block my-8 px-4">
-      {/* Title Section */}
       <motion.div
         initial="hidden"
-        animate="visible"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
         variants={fadeInFromBottom}
         className="text-center"
       >
@@ -44,7 +43,8 @@ const JobCategory = () => {
             <motion.div
               key={index}
               initial="hidden"
-              animate="visible"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.3 }}
               variants={fadeInFromBottom}
               className="w-full sm:w-[47%] md:w-64 lg:w-64 h-44 border bg-[#7E90FE0D] p-4 rounded-lg"
             >
