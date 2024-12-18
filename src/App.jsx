@@ -7,51 +7,47 @@ import AppliedJobs from "./components/pages/AppliedJobs.jsx";
 import Blog from "./components/pages/Blog.jsx";
 import JobDetails from "./components/FeaturedJobs/JobDetails.jsx";
 import CategoriesJob from "./components/Job Category/CategoriesJob.jsx";
-import ScrollToTop from "./components/ScrollToTop.jsx";
+import ScrollToTop from "./components/utility/ScrollToTop.jsx";
 
 function App() {
-  const router = createBrowserRouter([
+  const router = createBrowserRouter(
+    [
+      {
+        path: "/",
+        element: <Root />,
+        children: [
+          { path: "/", element: <Home /> },
+          { path: "/statistics", element: <Statistics /> },
+          {
+            path: "/applied-jobs",
+            element: <AppliedJobs />,
+            loader: () => fetch("/jobs.json"),
+          },
+          { path: "/blog", element: <Blog /> },
+          {
+            path: "/job/:id",
+            element: <JobDetails />,
+            loader: () => fetch("/jobs.json"),
+          },
+          {
+            path: "/category/:id",
+            element: <CategoriesJob />,
+            loader: () => fetch("/jobs.json"),
+          },
+        ],
+      },
+    ],
     {
-      path: "/",
-      element: <Root />,
-      children: [
-        {
-          path: "/",
-          element: <Home />,
-        },
-        {
-          path: "/statistics",
-          element: <Statistics />,
-        },
-        {
-          path: "/applied-jobs",
-          element: <AppliedJobs />,
-          loader: () => fetch("/jobs.json"),
-        },
-        {
-          path: "/blog",
-          element: <Blog />,
-        },
-        {
-          path: "/job/:id",
-          element: <JobDetails />,
-          loader: () => fetch("/jobs.json"),
-        },
-        {
-          path: "/category/:id",
-          element: <CategoriesJob />,
-          loader: () => fetch("/jobs.json"),
-        },
-      ],
-    },
-  ]);
+      future: {
+        v7_skipActionErrorRevalidation: true,
+      },
+    }
+  );
 
   return (
-    <div>
-      <RouterProvider router={router}>
-        <ScrollToTop />
-      </RouterProvider>
-    </div>
+    <RouterProvider router={router}>
+      <ScrollToTop />
+    </RouterProvider>
   );
 }
 
