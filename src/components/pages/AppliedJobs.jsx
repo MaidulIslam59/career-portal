@@ -3,6 +3,8 @@ import { useLoaderData, Link } from "react-router-dom";
 import { getStoredJobApplication } from "../utility/LocalStorage";
 import { HiLocationMarker } from "react-icons/hi";
 import { AiOutlineDollarCircle } from "react-icons/ai";
+import { motion } from "framer-motion";
+
 const AppliedJobs = () => {
   const jobs = useLoaderData();
   const [appliedJobs, setAppliedJobs] = useState([]);
@@ -27,7 +29,6 @@ const AppliedJobs = () => {
   useEffect(() => {
     const storedJobIds = getStoredJobApplication();
     if (jobs.length > 0) {
-      // const jobsApplied = jobs.filter((job) => storedJobIds.includes(job.id));
       const jobsApplied = [];
       for (const id of storedJobIds) {
         const job = jobs.find((job) => job.id === id);
@@ -37,35 +38,40 @@ const AppliedJobs = () => {
       }
       setAppliedJobs(jobsApplied);
       setDisplayJobs(jobsApplied);
-      // console.log(jobs, storedJobIds, jobsApplied);
     }
   }, []);
+
+  const fadeInBottomVariant = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0 },
+  };
+
   return (
     <div className="container mx-auto">
-      <div className=" flex justify-between">
+      <motion.div
+        className="flex justify-between"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5 }}
+      >
         <div>
-          {/* <div
-          className="bg-no-repeat bg-left"
-          style="background-image: url();"
-        ></div> */}
           <img
-            className="m-0 p-0 w-80 h-52 "
+            className="m-0 p-0 w-80 h-52"
             src="/assets/images/bg1.png"
             alt=""
           />
         </div>
-        {/* -translate-y-32 */}
-        <h2 className="text-2xl font-bold text-center translate-y-28 ">
+        <h2 className="text-2xl font-bold text-center translate-y-28">
           Applied Jobs
         </h2>
         <div>
           <img
-            className="m-0 p-0 w-80 h-52 "
+            className="m-0 p-0 w-80 h-52"
             src="/assets/images/bg2.png"
             alt=""
           />
         </div>
-      </div>
+      </motion.div>
 
       <select
         onChange={(e) => handleJobsFilter(e.target.value)}
@@ -79,20 +85,26 @@ const AppliedJobs = () => {
         <option value={"onsite"}>Onsite</option>
       </select>
 
-      <ul>
+      <motion.ul
+        initial="hidden"
+        animate="visible"
+        variants={{
+          hidden: { opacity: 0 },
+          visible: { opacity: 1, transition: { staggerChildren: 0.2 } },
+        }}
+      >
         {displayJobs.map((job) => (
-          <div key={job.id} className="">
-            {/* card card-compact */}
-            <div className=" shadow-xl m-6 ">
+          <motion.div
+            key={job.id}
+            variants={fadeInBottomVariant}
+            transition={{ duration: 0.5 }}
+          >
+            <div className="shadow-xl m-6">
               <div className="flex justify-between p-6 gap-7 border rounded-md">
                 <div className="flex gap-12">
-                  <div className=" bg-neutral-100 p-4 border rounded-md">
+                  <div className="bg-neutral-100 p-4 border rounded-md">
                     <img className="w-28 h-10 mt-10" src={job.logo} alt="" />
                   </div>
-                  {/* <figure>
-                  <img src={job.logo} alt="logo" />
-                </figure> */}
-
                   <div className="">
                     <h2 className="text-xl font-semibold pb-1">
                       {job.job_title}
@@ -106,13 +118,13 @@ const AppliedJobs = () => {
                         {job.job_type}
                       </button>
                     </div>
-                    <div className="flex mt-4 ">
+                    <div className="flex mt-4">
                       <h2 className="flex mr-6">
-                        <HiLocationMarker className="text-2xl mr-2" />{" "}
+                        <HiLocationMarker className="text-2xl mr-2" />
                         {job.location}
                       </h2>
-                      <h2 className="flex ">
-                        <AiOutlineDollarCircle className="text-2xl mr-2" />{" "}
+                      <h2 className="flex">
+                        <AiOutlineDollarCircle className="text-2xl mr-2" />
                         {job.salary}
                       </h2>
                     </div>
@@ -125,40 +137,11 @@ const AppliedJobs = () => {
                     </button>
                   </Link>
                 </div>
-                {/* <div className="">
-                  <h2 className="">{job.job_title}</h2>
-                  <p>{job.company_name}</p>
-                  <div>
-                    <button className="px-5 py-2 font-extrabold border rounded border-[#7E90FE] mr-4 text-[#9873FF]">
-                      {job.remote_or_onsite}
-                    </button>
-                    <button className="px-5 py-2 font-extrabold border rounded border-[#7E90FE] mr-4 text-[#9873FF]">
-                      {job.job_type}
-                    </button>
-                  </div>
-                  <div className="flex mt-4 ">
-                    <h2 className="flex mr-6">
-                      <HiLocationMarker className="text-2xl mr-2" />{" "}
-                      {job.location}
-                    </h2>
-                    <h2 className="flex ">
-                      <AiOutlineDollarCircle className="text-2xl mr-2" />{" "}
-                      {job.salary}
-                    </h2>
-                  </div>
-                </div> */}
-                {/* <div className="">
-                  <Link to={`/job/${id}`}>
-                    <button className="btn text-white bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
-                      View Details
-                    </button>
-                  </Link>
-                </div> */}
               </div>
             </div>
-          </div>
+          </motion.div>
         ))}
-      </ul>
+      </motion.ul>
     </div>
   );
 };

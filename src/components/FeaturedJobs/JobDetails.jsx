@@ -1,4 +1,6 @@
 import { useLoaderData, useParams } from "react-router-dom";
+import { useEffect } from "react";
+import { motion } from "framer-motion"; // Import Framer Motion
 import { AiOutlineDollarCircle } from "react-icons/ai";
 import { ImBriefcase } from "react-icons/im";
 import { FaPhoneAlt } from "react-icons/fa";
@@ -13,7 +15,7 @@ const JobDetails = () => {
   const { id } = useParams();
   const intId = parseInt(id);
   const job = jobs.find((job) => job.id === intId);
-  // console.log(job);
+
   const {
     logo,
     job_description,
@@ -25,43 +27,63 @@ const JobDetails = () => {
     contact_information,
   } = job;
 
+  useEffect(() => {
+    // Scroll to top when component mounts
+    window.scrollTo(0, 0);
+  }, []);
+
   const handleAppliedJobs = () => {
     saveJobApplication(intId);
     toast("You have applied successfully");
   };
 
+  // Framer Motion animation variants
+  const fadeInBottom = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+  };
+
   return (
-    //   className="w-full mx-0"
-    <div className="container mx-auto">
+    <motion.div
+      initial="hidden"
+      animate="visible"
+      variants={fadeInBottom}
+      className="container mx-auto"
+    >
+      {/* Header Section */}
       <div className="flex justify-between">
         <div>
-          {/* <div
-          className="bg-no-repeat bg-left"
-          style="background-image: url();"
-        ></div> */}
           <img
-            className="m-0 p-0 w-80 h-52 "
+            className="m-0 p-0 w-80 h-52"
             src="/assets/images/bg1.png"
-            alt=""
+            alt="Background 1"
           />
         </div>
-        {/* -translate-y-32 */}
-        <h2 className="text-2xl font-bold text-center translate-y-28 ">
+        <h2 className="text-2xl font-bold text-center translate-y-28">
           Job Details
         </h2>
         <div>
           <img
-            className="m-0 p-0 w-80 h-52 "
+            className="m-0 p-0 w-80 h-52"
             src="/assets/images/bg2.png"
-            alt=""
+            alt="Background 2"
           />
         </div>
       </div>
 
+      {/* Content Section */}
       <div className="container mx-auto grid gap-4 md:grid-cols-4 mt-32">
-        <div className=" md:grid col-span-3 ">
+        <div className="md:grid col-span-3">
+          {/* Job Details */}
           <section className="mb-6">
-            <img className="mb-4" src={logo} alt="logo" />
+            <motion.img
+              initial="hidden"
+              animate="visible"
+              variants={fadeInBottom}
+              className="mb-4"
+              src={logo}
+              alt="logo"
+            />
             <h2 className="font-bold text-2xl py-2">Job Title : {job_title}</h2>
             <p>
               <strong>Job Description: </strong>
@@ -75,7 +97,7 @@ const JobDetails = () => {
           </section>
           <section className="mb-6">
             <h2>
-              <strong>Educationar Requirements :</strong>
+              <strong>Educational Requirements :</strong>
             </h2>
             <p>{educational_requirements}</p>
           </section>
@@ -86,16 +108,23 @@ const JobDetails = () => {
             <p>{experiences}</p>
           </section>
         </div>
-        <div className="">
+
+        {/* Sidebar Section */}
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          variants={fadeInBottom}
+          className=""
+        >
           <h2 className="text-xl mb-5 font-bold">Job Details</h2>
           <hr />
           <p className="flex mt-5">
             <AiOutlineDollarCircle className="text-2xl mr-2" />
-            <strong className="mr-2 text-nowrap">Salary : </strong> {salary}
+            <strong className="mr-2 text-nowrap">Salary: </strong> {salary}
           </p>
           <p className="flex mt-4">
             <ImBriefcase className="text-2xl mr-2" />
-            <strong className="mr-2 text-nowrap">Job Title : </strong>{" "}
+            <strong className="mr-2 text-nowrap">Job Title: </strong>{" "}
             {job_title}
           </p>
           <h2 className="text-xl font-bold mt-8 mb-6">Contact Information</h2>
@@ -123,9 +152,9 @@ const JobDetails = () => {
             Apply Now
           </button>
           <ToastContainer />
-        </div>
+        </motion.div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
